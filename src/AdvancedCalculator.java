@@ -1,3 +1,4 @@
+// the main class
 import javax.swing.*;
 
 public class AdvancedCalculator {
@@ -9,10 +10,10 @@ public class AdvancedCalculator {
         }catch (ClassNotFoundException | IllegalAccessException | InstantiationException | UnsupportedLookAndFeelException e) {
         
         }
-        Calculator f = new Calculator();
-        f.setUndecorated(true);
-        f.setVisible(true);
-        f.setLocation(500, 140);
-        f.setSize(350, 450);     
+        Calculator calculator = new Calculator();
+        calculator.setUndecorated(true);
+        calculator.setVisible(true);
+        calculator.setLocation(500, 140);
+        calculator.setSize(350, 450);     
     }
 }
