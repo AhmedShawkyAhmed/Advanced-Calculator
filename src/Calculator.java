@@ -13,7 +13,7 @@ public class Calculator extends JFrame implements ActionListener{
     JTextField textfield;
     JButton [] button;
     Font font1,font2;
-    JLabel l;
+    JLabel label;
     int x = 0;
     double temp1,temp2,result,a,m1;
     char ch;
@@ -31,7 +31,7 @@ public class Calculator extends JFrame implements ActionListener{
         font2 = new Font("seirf", Font.CENTER_BASELINE, 20);
         color1 = new Color(255, 255, 255);
         color2 = new Color(0,0,128);
-        l = new JLabel("Calculator");
+        label = new JLabel("Calculator");
         
         // setting the Container of the Panels
         container = getContentPane();
@@ -66,9 +66,9 @@ public class Calculator extends JFrame implements ActionListener{
         Exitpanel.setBackground(Color.BLACK);
         
         // setting Font Color and Style to the Label
-        l.setFont(font1);
-        l.setForeground(color1);
-        Exitpanel.add(l);
+        label.setFont(font1);
+        label.setForeground(color1);
+        Exitpanel.add(label);
         
         // Buttons Initialization, Font Color, Font Style and Actions
         
