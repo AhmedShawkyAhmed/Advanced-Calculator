@@ -14,7 +14,7 @@ public class Calculator extends JFrame implements ActionListener{
     JButton [] button;
     Font font1,font2;
     JLabel label;
-    int x = 0;
+    int number = 0;
     double temp1,temp2,result,a,m1;
     char ch;
     
@@ -548,14 +548,14 @@ public class Calculator extends JFrame implements ActionListener{
             }
             if (s.equals("C")) {
                 textfield.setText("");
-                x = 0;
+                number = 0;
             }
             if (s.equals("( - )")) {
                 textfield.setText("-");
             }
             if (s.equals("←")) {
-                x = textfield.getText().length();
-                textfield.setText(textfield.getText().substring(0, x-1));
+                number = textfield.getText().length();
+                textfield.setText(textfield.getText().substring(0, number-1));
             }
             if (s.equals("log")) {
                 a = Double.parseDouble(textfield.getText());
@@ -656,16 +656,16 @@ public class Calculator extends JFrame implements ActionListener{
                 textfield.setText(textfield.getText() + m1);
             }
             if (s.equals("M+")) {
-                x = 1;
-                if (x == 1) {
+                number = 1;
+                if (number == 1) {
                     m1 = Double.parseDouble(textfield.getText());
                     m1 += m1;
                     textfield.setText(""+m1);
                 }
             }
             if (s.equals("M-")) {
-                x = 1;
-                if (x == 1) {
+                number = 1;
+                if (number == 1) {
                     m1 = Double.parseDouble(textfield.getText());
                     m1 -= m1;
                     textfield.setText(""+m1);
@@ -690,9 +690,9 @@ public class Calculator extends JFrame implements ActionListener{
                 m1 = a;
             }
             if (s.equals(".")) {
-                if (x == 0) {
+                if (number == 0) {
                     textfield.setText(textfield.getText() + ".");
-                    x = 1;
+                    number = 1;
                 } else {
                     textfield.setText(textfield.getText());
                 }
@@ -714,7 +714,7 @@ public class Calculator extends JFrame implements ActionListener{
                     temp1 = Double.parseDouble(textfield.getText());
                     textfield.setText("");
                     ch = '+';
-                    x = 0;
+                    number = 0;
                 }
                 textfield.requestFocus();
             }
@@ -724,7 +724,7 @@ public class Calculator extends JFrame implements ActionListener{
                     temp1 = 0;
                     ch = '-';
                 } else {
-                    x = 0;
+                    number = 0;
                     temp1 = Double.parseDouble(textfield.getText());
                     textfield.setText("");
                     ch = '-';
@@ -737,7 +737,7 @@ public class Calculator extends JFrame implements ActionListener{
                     temp1 = 1;
                     ch = '*';
                 } else {
-                    x = 0;
+                    number = 0;
                     temp1 = Double.parseDouble(textfield.getText());
                     ch = '*';
                     textfield.setText("");
@@ -750,7 +750,7 @@ public class Calculator extends JFrame implements ActionListener{
                     temp1 = 1;
                     ch = '/';
                 } else {
-                    x = 0;
+                    number = 0;
                     temp1 = Double.parseDouble(textfield.getText());
                     ch = '/';
                     textfield.setText("");
@@ -763,7 +763,7 @@ public class Calculator extends JFrame implements ActionListener{
                     temp1 = 1;
                     ch = '^';
                 } else {
-                    x = 0;
+                    number = 0;
                     temp1 = Double.parseDouble(textfield.getText());
                     ch = '^';
                     textfield.setText("");
@@ -776,7 +776,7 @@ public class Calculator extends JFrame implements ActionListener{
                     temp1 = 1;
                     ch = '%';
                 } else {
-                    x = 0;
+                    number = 0;
                     temp1 = Double.parseDouble(textfield.getText());
                     ch = '%';
                     textfield.setText("");
@@ -789,7 +789,7 @@ public class Calculator extends JFrame implements ActionListener{
                     temp1 = 1;
                     ch = '$';
                 } else {
-                    x = 0;
+                    number = 0;
                     temp1 = Double.parseDouble(textfield.getText());
                     ch = '$';
                     textfield.setText("");
@@ -802,7 +802,7 @@ public class Calculator extends JFrame implements ActionListener{
                     temp1 = 1;
                     ch = '√';
                 } else {
-                    x = 0;
+                    number = 0;
                     temp1 = Double.parseDouble(textfield.getText());
                     ch = '√';
                     textfield.setText("");
@@ -815,7 +815,7 @@ public class Calculator extends JFrame implements ActionListener{
                     temp1 = 1;
                     ch = 'C';
                 } else {
-                    x = 0;
+                    number = 0;
                     temp1 = Double.parseDouble(textfield.getText());
                     ch = 'C';
                     textfield.setText("");
@@ -828,7 +828,7 @@ public class Calculator extends JFrame implements ActionListener{
                     temp1 = 1;
                     ch = 'P';
                 } else {
-                    x = 0;
+                    number = 0;
                     temp1 = Double.parseDouble(textfield.getText());
                     ch = 'P';
                     textfield.setText("");
@@ -841,7 +841,7 @@ public class Calculator extends JFrame implements ActionListener{
                     temp1 = 1;
                     ch = 'L';
                 } else {
-                    x = 0;
+                    number = 0;
                     temp1 = Double.parseDouble(textfield.getText());
                     ch = 'L';
                     textfield.setText("");
@@ -854,7 +854,7 @@ public class Calculator extends JFrame implements ActionListener{
                     temp1 = 1;
                     ch = 'e';
                 } else {
-                    x = 0;
+                    number = 0;
                     temp1 = Double.parseDouble(textfield.getText());
                     ch = 'e';
                     textfield.setText("");
@@ -908,7 +908,7 @@ public class Calculator extends JFrame implements ActionListener{
                         }
                         textfield.setText("");
                         textfield.setText(textfield.getText() + result);
-                        x = 1;
+                        number = 1;
                         m1 = result;
                     }
             }
@@ -916,12 +916,12 @@ public class Calculator extends JFrame implements ActionListener{
                 this.setState(JFrame.ICONIFIED);
             }
             if (s.equals(" ⌫ ")) {
-                if (x == 0) {
+                if (number == 0) {
                     this.setExtendedState(JFrame.MAXIMIZED_BOTH);
-                    x=1;
-                }else if (x == 1) {
+                    number=1;
+                }else if (number == 1) {
                     this.setExtendedState(JFrame.NORMAL);
-                    x=0;
+                    number=0;
                 }
             }
             textfield.requestFocus();       
