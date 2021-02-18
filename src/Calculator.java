@@ -8,11 +8,11 @@ public class Calculator extends JFrame implements ActionListener{
     // Implements Objects from the Classes
     Hover hover;
     Container container;
-    Color color1,c2;
+    Color color1,color2;
     JPanel Buttonpanel,Textpanel,Exitpanel;
     JTextField textfield;
-    JButton [] B;
-    Font f,f1;
+    JButton [] button;
+    Font font1,font2;
     JLabel l;
     int x = 0;
     double temp1,temp2,result,a,m1;
@@ -26,11 +26,11 @@ public class Calculator extends JFrame implements ActionListener{
         Buttonpanel = new JPanel();
         Textpanel = new JPanel();
         Exitpanel = new JPanel();
-        B = new JButton[100];
-        f = new Font("seirf", Font.CENTER_BASELINE, 15);
-        f1 = new Font("seirf", Font.CENTER_BASELINE, 20);
+        button = new JButton[100];
+        font1 = new Font("seirf", Font.CENTER_BASELINE, 15);
+        font2 = new Font("seirf", Font.CENTER_BASELINE, 20);
         color1 = new Color(255, 255, 255);
-        c2 = new Color(0,0,128);
+        color2 = new Color(0,0,128);
         l = new JLabel("Calculator");
         
         // setting the Container of the Panels
@@ -54,7 +54,7 @@ public class Calculator extends JFrame implements ActionListener{
         });
         textfield.setBackground(Color.DARK_GRAY.darker());
         textfield.setForeground(color1);
-        textfield.setFont(f1);
+        textfield.setFont(font2);
         
         // setting Layout and Background for the Panels
         Textpanel.add(textfield);
@@ -66,450 +66,450 @@ public class Calculator extends JFrame implements ActionListener{
         Exitpanel.setBackground(Color.BLACK);
         
         // setting Font Color and Style to the Label
-        l.setFont(f);
+        l.setFont(font1);
         l.setForeground(color1);
         Exitpanel.add(l);
         
         // Buttons Initialization, Font Color, Font Style and Actions
         
-        B[0] = new JButton("MC");
-        B[0].setForeground(color1);
-        B[0].setFont(f);
-        B[0].setContentAreaFilled( false );
-        Buttonpanel.add(B[0]);
-        B[0].addActionListener(this);
-        B[0].addMouseListener(hover);
+        button[0] = new JButton("MC");
+        button[0].setForeground(color1);
+        button[0].setFont(font1);
+        button[0].setContentAreaFilled( false );
+        Buttonpanel.add(button[0]);
+        button[0].addActionListener(this);
+        button[0].addMouseListener(hover);
         
-        B[1] = new JButton("M+");
-        B[1].setForeground(color1);
-        B[1].setFont(f);
-        B[1].setContentAreaFilled( false );
-        Buttonpanel.add(B[1]);
-        B[1].addActionListener(this);
-        B[1].addMouseListener(hover);
+        button[1] = new JButton("M+");
+        button[1].setForeground(color1);
+        button[1].setFont(font1);
+        button[1].setContentAreaFilled( false );
+        Buttonpanel.add(button[1]);
+        button[1].addActionListener(this);
+        button[1].addMouseListener(hover);
         
-        B[2] = new JButton("M-");
-        B[2].setForeground(color1);
-        B[2].setFont(f);
-        B[2].setContentAreaFilled( false );
-        Buttonpanel.add(B[2]);
-        B[2].addActionListener(this);
-        B[2].addMouseListener(hover);
+        button[2] = new JButton("M-");
+        button[2].setForeground(color1);
+        button[2].setFont(font1);
+        button[2].setContentAreaFilled( false );
+        Buttonpanel.add(button[2]);
+        button[2].addActionListener(this);
+        button[2].addMouseListener(hover);
                 
-        B[3] = new JButton("MR");
-        B[3].setForeground(color1);
-        B[3].setFont(f);
-        B[3].setContentAreaFilled( false );
-        Buttonpanel.add(B[3]);
-        B[3].addActionListener(this);
-        B[3].addMouseListener(hover);
+        button[3] = new JButton("MR");
+        button[3].setForeground(color1);
+        button[3].setFont(font1);
+        button[3].setContentAreaFilled( false );
+        Buttonpanel.add(button[3]);
+        button[3].addActionListener(this);
+        button[3].addMouseListener(hover);
         
-        B[4] = new JButton("Sinh");
-        B[4].setForeground(color1);
-        B[4].setFont(f);
-        B[4].setContentAreaFilled( false );
-        Buttonpanel.add(B[4]);
-        B[4].addActionListener(this);
-        B[4].addMouseListener(hover);
+        button[4] = new JButton("Sinh");
+        button[4].setForeground(color1);
+        button[4].setFont(font1);
+        button[4].setContentAreaFilled( false );
+        Buttonpanel.add(button[4]);
+        button[4].addActionListener(this);
+        button[4].addMouseListener(hover);
         
-        B[5] = new JButton("Cosh");
-        B[5].setForeground(color1);
-        B[5].setFont(f);
-        B[5].setContentAreaFilled( false );
-        Buttonpanel.add(B[5]);
-        B[5].addActionListener(this);
-        B[5].addMouseListener(hover);
+        button[5] = new JButton("Cosh");
+        button[5].setForeground(color1);
+        button[5].setFont(font1);
+        button[5].setContentAreaFilled( false );
+        Buttonpanel.add(button[5]);
+        button[5].addActionListener(this);
+        button[5].addMouseListener(hover);
         
-        B[6] = new JButton("Tanh");
-        B[6].setForeground(color1);
-        B[6].setFont(f);
-        B[6].setContentAreaFilled( false );
-        Buttonpanel.add(B[6]);
-        B[6].addActionListener(this);
-        B[6].addMouseListener(hover);
+        button[6] = new JButton("Tanh");
+        button[6].setForeground(color1);
+        button[6].setFont(font1);
+        button[6].setContentAreaFilled( false );
+        Buttonpanel.add(button[6]);
+        button[6].addActionListener(this);
+        button[6].addMouseListener(hover);
                 
-        B[7] = new JButton("Exp");
-        B[7].setForeground(color1);
-        B[7].setFont(f);
-        B[7].setContentAreaFilled( false );
-        Buttonpanel.add(B[7]);
-        B[7].addActionListener(this);
-        B[7].addMouseListener(hover);
+        button[7] = new JButton("Exp");
+        button[7].setForeground(color1);
+        button[7].setFont(font1);
+        button[7].setContentAreaFilled( false );
+        Buttonpanel.add(button[7]);
+        button[7].addActionListener(this);
+        button[7].addMouseListener(hover);
         
-        B[8] = new JButton("Sin");
-        B[8].setForeground(color1);
-        B[8].setFont(f);
-        B[8].setContentAreaFilled( false );
-        Buttonpanel.add(B[8]);
-        B[8].addActionListener(this);
-        B[8].addMouseListener(hover);
+        button[8] = new JButton("Sin");
+        button[8].setForeground(color1);
+        button[8].setFont(font1);
+        button[8].setContentAreaFilled( false );
+        Buttonpanel.add(button[8]);
+        button[8].addActionListener(this);
+        button[8].addMouseListener(hover);
         
-        B[9] = new JButton("Cos");
-        B[9].setForeground(color1);
-        B[9].setFont(f);
-        B[9].setContentAreaFilled( false );
-        Buttonpanel.add(B[9]);
-        B[9].addActionListener(this);
-        B[9].addMouseListener(hover);
+        button[9] = new JButton("Cos");
+        button[9].setForeground(color1);
+        button[9].setFont(font1);
+        button[9].setContentAreaFilled( false );
+        Buttonpanel.add(button[9]);
+        button[9].addActionListener(this);
+        button[9].addMouseListener(hover);
         
-        B[10] = new JButton("Tan");
-        B[10].setForeground(color1);
-        B[10].setFont(f);
-        B[10].setContentAreaFilled( false );
-        Buttonpanel.add(B[10]);
-        B[10].addActionListener(this);
-        B[10].addMouseListener(hover);
+        button[10] = new JButton("Tan");
+        button[10].setForeground(color1);
+        button[10].setFont(font1);
+        button[10].setContentAreaFilled( false );
+        Buttonpanel.add(button[10]);
+        button[10].addActionListener(this);
+        button[10].addMouseListener(hover);
         
-        B[11] = new JButton("mod");
-        B[11].setForeground(color1);
-        B[11].setFont(f);
-        B[11].setContentAreaFilled( false );
-        Buttonpanel.add(B[11]);
-        B[11].addActionListener(this);
-        B[11].addMouseListener(hover);
+        button[11] = new JButton("mod");
+        button[11].setForeground(color1);
+        button[11].setFont(font1);
+        button[11].setContentAreaFilled( false );
+        Buttonpanel.add(button[11]);
+        button[11].addActionListener(this);
+        button[11].addMouseListener(hover);
          
-        B[12] = new JButton("Rad");
-        B[12].setForeground(color1);
-        B[12].setFont(f);
-        B[12].setContentAreaFilled( false );
-        Buttonpanel.add(B[12]);
-        B[12].addActionListener(this);
-        B[12].addMouseListener(hover);
+        button[12] = new JButton("Rad");
+        button[12].setForeground(color1);
+        button[12].setFont(font1);
+        button[12].setContentAreaFilled( false );
+        Buttonpanel.add(button[12]);
+        button[12].addActionListener(this);
+        button[12].addMouseListener(hover);
         
-        B[13] = new JButton("Deg");
-        B[13].setForeground(color1);
-        B[13].setFont(f);
-        B[13].setContentAreaFilled( false );
-        Buttonpanel.add(B[13]);
-        B[13].addActionListener(this);
-        B[13].addMouseListener(hover);
+        button[13] = new JButton("Deg");
+        button[13].setForeground(color1);
+        button[13].setFont(font1);
+        button[13].setContentAreaFilled( false );
+        Buttonpanel.add(button[13]);
+        button[13].addActionListener(this);
+        button[13].addMouseListener(hover);
 
-        B[14] = new JButton("log");
-        B[14].setForeground(color1);
-        B[14].setFont(f);
-        B[14].setContentAreaFilled( false );
-        Buttonpanel.add(B[14]);
-        B[14].addActionListener(this);
-        B[14].addMouseListener(hover);
+        button[14] = new JButton("log");
+        button[14].setForeground(color1);
+        button[14].setFont(font1);
+        button[14].setContentAreaFilled( false );
+        Buttonpanel.add(button[14]);
+        button[14].addActionListener(this);
+        button[14].addMouseListener(hover);
 
-        B[15] = new JButton("n-logx");
-        B[15].setForeground(color1);
-        B[15].setFont(f);
-        B[15].setContentAreaFilled( false );
-        Buttonpanel.add(B[15]);
-        B[15].addActionListener(this);
-        B[15].addMouseListener(hover);
+        button[15] = new JButton("n-logx");
+        button[15].setForeground(color1);
+        button[15].setFont(font1);
+        button[15].setContentAreaFilled( false );
+        Buttonpanel.add(button[15]);
+        button[15].addActionListener(this);
+        button[15].addMouseListener(hover);
                         
-        B[16] = new JButton("Ran#");
-        B[16].setForeground(color1);
-        B[16].setFont(f);
-        B[16].setContentAreaFilled( false );
-        Buttonpanel.add(B[16]);
-        B[16].addActionListener(this);
-        B[16].addMouseListener(hover);
+        button[16] = new JButton("Ran#");
+        button[16].setForeground(color1);
+        button[16].setFont(font1);
+        button[16].setContentAreaFilled( false );
+        Buttonpanel.add(button[16]);
+        button[16].addActionListener(this);
+        button[16].addMouseListener(hover);
         
-        B[17] = new JButton("nPr");
-        B[17].setForeground(color1);
-        B[17].setFont(f);
-        B[17].setContentAreaFilled( false );
-        Buttonpanel.add(B[17]);
-        B[17].addActionListener(this);
-        B[17].addMouseListener(hover);
+        button[17] = new JButton("nPr");
+        button[17].setForeground(color1);
+        button[17].setFont(font1);
+        button[17].setContentAreaFilled( false );
+        Buttonpanel.add(button[17]);
+        button[17].addActionListener(this);
+        button[17].addMouseListener(hover);
         
-        B[18] = new JButton("nCr");
-        B[18].setForeground(color1);
-        B[18].setFont(f);
-        B[18].setContentAreaFilled( false );
-        Buttonpanel.add(B[18]);
-        B[18].addActionListener(this);
-        B[18].addMouseListener(hover);
+        button[18] = new JButton("nCr");
+        button[18].setForeground(color1);
+        button[18].setFont(font1);
+        button[18].setContentAreaFilled( false );
+        Buttonpanel.add(button[18]);
+        button[18].addActionListener(this);
+        button[18].addMouseListener(hover);
         
-        B[19] = new JButton("1/x");
-        B[19].setForeground(color1);
-        B[19].setFont(f);
-        B[19].setContentAreaFilled( false );
-        Buttonpanel.add(B[19]);
-        B[19].addActionListener(this);
-        B[19].addMouseListener(hover);
+        button[19] = new JButton("1/x");
+        button[19].setForeground(color1);
+        button[19].setFont(font1);
+        button[19].setContentAreaFilled( false );
+        Buttonpanel.add(button[19]);
+        button[19].addActionListener(this);
+        button[19].addMouseListener(hover);
                 
-        B[20] = new JButton("2^x");
-        B[20].setForeground(color1);
-        B[20].setFont(f);
-        B[20].setContentAreaFilled( false );
-        Buttonpanel.add(B[20]);
-        B[20].addActionListener(this);
-        B[20].addMouseListener(hover);
+        button[20] = new JButton("2^x");
+        button[20].setForeground(color1);
+        button[20].setFont(font1);
+        button[20].setContentAreaFilled( false );
+        Buttonpanel.add(button[20]);
+        button[20].addActionListener(this);
+        button[20].addMouseListener(hover);
         
-        B[21] = new JButton("*10^x");
-        B[21].setForeground(color1);
-        B[21].setFont(f);
-        B[21].setContentAreaFilled( false );
-        Buttonpanel.add(B[21]);
-        B[21].addActionListener(this);
-        B[21].addMouseListener(hover);
+        button[21] = new JButton("*10^x");
+        button[21].setForeground(color1);
+        button[21].setFont(font1);
+        button[21].setContentAreaFilled( false );
+        Buttonpanel.add(button[21]);
+        button[21].addActionListener(this);
+        button[21].addMouseListener(hover);
         
-        B[22]= new JButton("n^x");
-        B[22].setForeground(color1);
-        B[22].setFont(f);
-        B[22].setContentAreaFilled( false );
-        Buttonpanel.add(B[22]);
-        B[22].addActionListener(this);
-        B[22].addMouseListener(hover);
+        button[22]= new JButton("n^x");
+        button[22].setForeground(color1);
+        button[22].setFont(font1);
+        button[22].setContentAreaFilled( false );
+        Buttonpanel.add(button[22]);
+        button[22].addActionListener(this);
+        button[22].addMouseListener(hover);
        
-        B[23] = new JButton("n^2");
-        B[23].setForeground(color1);
-        B[23].setFont(f);
-        B[23].setContentAreaFilled( false );
-        Buttonpanel.add(B[23]);
-        B[23].addActionListener(this);
-        B[23].addMouseListener(hover);
+        button[23] = new JButton("n^2");
+        button[23].setForeground(color1);
+        button[23].setFont(font1);
+        button[23].setContentAreaFilled( false );
+        Buttonpanel.add(button[23]);
+        button[23].addActionListener(this);
+        button[23].addMouseListener(hover);
 
-        B[24] = new JButton("n√x");
-        B[24].setForeground(color1);
-        B[24].setFont(f);
-        B[24].setContentAreaFilled( false );
-        Buttonpanel.add(B[24]);
-        B[24].addActionListener(this);
-        B[24].addMouseListener(hover);
+        button[24] = new JButton("n√x");
+        button[24].setForeground(color1);
+        button[24].setFont(font1);
+        button[24].setContentAreaFilled( false );
+        Buttonpanel.add(button[24]);
+        button[24].addActionListener(this);
+        button[24].addMouseListener(hover);
         
-        B[25] = new JButton("2√x");
-        B[25].setForeground(color1);
-        B[25].setFont(f);
-        B[25].setContentAreaFilled( false );
-        Buttonpanel.add(B[25]);
-        B[25].addActionListener(this);
-        B[25].addMouseListener(hover);
+        button[25] = new JButton("2√x");
+        button[25].setForeground(color1);
+        button[25].setFont(font1);
+        button[25].setContentAreaFilled( false );
+        Buttonpanel.add(button[25]);
+        button[25].addActionListener(this);
+        button[25].addMouseListener(hover);
         
-        B[26] = new JButton("e");
-        B[26].setForeground(color1);
-        B[26].setFont(f);
-        B[26].setContentAreaFilled( false );
-        Buttonpanel.add(B[26]);
-        B[26].addActionListener(this);
-        B[26].addMouseListener(hover);
+        button[26] = new JButton("e");
+        button[26].setForeground(color1);
+        button[26].setFont(font1);
+        button[26].setContentAreaFilled( false );
+        Buttonpanel.add(button[26]);
+        button[26].addActionListener(this);
+        button[26].addMouseListener(hover);
         
-        B[27] = new JButton("e^x");
-        B[27].setForeground(color1);
-        B[27].setFont(f);
-        B[27].setContentAreaFilled( false );
-        Buttonpanel.add(B[27]);
-        B[27].addActionListener(this);
-        B[27].addMouseListener(hover);
+        button[27] = new JButton("e^x");
+        button[27].setForeground(color1);
+        button[27].setFont(font1);
+        button[27].setContentAreaFilled( false );
+        Buttonpanel.add(button[27]);
+        button[27].addActionListener(this);
+        button[27].addMouseListener(hover);
         
-        B[28] = new JButton("%");
-        B[28].setForeground(color1);
-        B[28].setFont(f);
-        B[28].setContentAreaFilled( false );
-        Buttonpanel.add(B[28]);
-        B[28].addActionListener(this);
-        B[28].addMouseListener(hover);
+        button[28] = new JButton("%");
+        button[28].setForeground(color1);
+        button[28].setFont(font1);
+        button[28].setContentAreaFilled( false );
+        Buttonpanel.add(button[28]);
+        button[28].addActionListener(this);
+        button[28].addMouseListener(hover);
         
-        B[29] = new JButton("n!");
-        B[29].setForeground(color1);
-        B[29].setFont(f);
-        B[29].setContentAreaFilled( false );
-        Buttonpanel.add(B[29]);
-        B[29].addActionListener(this);
-        B[29].addMouseListener(hover);
+        button[29] = new JButton("n!");
+        button[29].setForeground(color1);
+        button[29].setFont(font1);
+        button[29].setContentAreaFilled( false );
+        Buttonpanel.add(button[29]);
+        button[29].addActionListener(this);
+        button[29].addMouseListener(hover);
         
-        B[30] = new JButton("C");
-        B[30].setForeground(color1);
-        B[30].setFont(f);
-        B[30].setContentAreaFilled( false );
-        Buttonpanel.add(B[30]);
-        B[30].addActionListener(this);
-        B[30].addMouseListener(hover);
+        button[30] = new JButton("C");
+        button[30].setForeground(color1);
+        button[30].setFont(font1);
+        button[30].setContentAreaFilled( false );
+        Buttonpanel.add(button[30]);
+        button[30].addActionListener(this);
+        button[30].addMouseListener(hover);
         
-        B[31] = new JButton("←");
-        B[31].setForeground(color1);
-        B[31].setFont(f);
-        B[31].setContentAreaFilled( false );
-        Buttonpanel.add(B[31]);
-        B[31].addActionListener(this);
-        B[31].addMouseListener(hover);
+        button[31] = new JButton("←");
+        button[31].setForeground(color1);
+        button[31].setFont(font1);
+        button[31].setContentAreaFilled( false );
+        Buttonpanel.add(button[31]);
+        button[31].addActionListener(this);
+        button[31].addMouseListener(hover);
         
-        B[32] = new JButton("|x|");
-        B[32].setForeground(color1);
-        B[32].setFont(f);
-        B[32].setContentAreaFilled( false );
-        Buttonpanel.add(B[32]);
-        B[32].addActionListener(this);
-        B[32].addMouseListener(hover);
+        button[32] = new JButton("|x|");
+        button[32].setForeground(color1);
+        button[32].setFont(font1);
+        button[32].setContentAreaFilled( false );
+        Buttonpanel.add(button[32]);
+        button[32].addActionListener(this);
+        button[32].addMouseListener(hover);
         
-        B[33] = new JButton("π");
-        B[33].setForeground(color1);
-        B[33].setFont(f);
-        B[33].setContentAreaFilled( false );
-        Buttonpanel.add(B[33]);
-        B[33].addActionListener(this);
-        B[33].addMouseListener(hover);
+        button[33] = new JButton("π");
+        button[33].setForeground(color1);
+        button[33].setFont(font1);
+        button[33].setContentAreaFilled( false );
+        Buttonpanel.add(button[33]);
+        button[33].addActionListener(this);
+        button[33].addMouseListener(hover);
         
-        B[34] = new JButton("( - )");
-        B[34].setForeground(color1);
-        B[34].setFont(f);
-        B[34].setContentAreaFilled( false );
-        Buttonpanel.add(B[34]);
-        B[34].addActionListener(this);
-        B[34].addMouseListener(hover);
+        button[34] = new JButton("( - )");
+        button[34].setForeground(color1);
+        button[34].setFont(font1);
+        button[34].setContentAreaFilled( false );
+        Buttonpanel.add(button[34]);
+        button[34].addActionListener(this);
+        button[34].addMouseListener(hover);
         
-        B[35] = new JButton("/");
-        B[35].setForeground(color1);
-        B[35].setFont(f);
-        B[35].setContentAreaFilled( false );
-        Buttonpanel.add(B[35]);
-        B[35].addActionListener(this);
-        B[35].addMouseListener(hover);
+        button[35] = new JButton("/");
+        button[35].setForeground(color1);
+        button[35].setFont(font1);
+        button[35].setContentAreaFilled( false );
+        Buttonpanel.add(button[35]);
+        button[35].addActionListener(this);
+        button[35].addMouseListener(hover);
         
-        B[36] = new JButton("7");
-        B[36].setForeground(color1);
-        B[36].setFont(f);
-        B[36].setContentAreaFilled( false );
-        Buttonpanel.add(B[36]);
-        B[36].addActionListener(this);
-        B[36].addMouseListener(hover);
+        button[36] = new JButton("7");
+        button[36].setForeground(color1);
+        button[36].setFont(font1);
+        button[36].setContentAreaFilled( false );
+        Buttonpanel.add(button[36]);
+        button[36].addActionListener(this);
+        button[36].addMouseListener(hover);
         
-        B[37] = new JButton("8");
-        B[37].setForeground(color1);
-        B[37].setFont(f);
-        B[37].setContentAreaFilled( false );
-        Buttonpanel.add(B[37]);
-        B[37].addActionListener(this);
-        B[37].addMouseListener(hover);
+        button[37] = new JButton("8");
+        button[37].setForeground(color1);
+        button[37].setFont(font1);
+        button[37].setContentAreaFilled( false );
+        Buttonpanel.add(button[37]);
+        button[37].addActionListener(this);
+        button[37].addMouseListener(hover);
         
-        B[38] = new JButton("9");
-        B[38].setForeground(color1);
-        B[38].setFont(f);
-        B[38].setContentAreaFilled( false );
-        Buttonpanel.add(B[38]);
-        B[38].addActionListener(this);
-        B[38].addMouseListener(hover);
+        button[38] = new JButton("9");
+        button[38].setForeground(color1);
+        button[38].setFont(font1);
+        button[38].setContentAreaFilled( false );
+        Buttonpanel.add(button[38]);
+        button[38].addActionListener(this);
+        button[38].addMouseListener(hover);
         
-        B[39] = new JButton("*");
-        B[39].setForeground(color1);
-        B[39].setFont(f);
-        B[39].setContentAreaFilled( false );
-        Buttonpanel.add(B[39]);
-        B[39].addActionListener(this);
-        B[39].addMouseListener(hover);
+        button[39] = new JButton("*");
+        button[39].setForeground(color1);
+        button[39].setFont(font1);
+        button[39].setContentAreaFilled( false );
+        Buttonpanel.add(button[39]);
+        button[39].addActionListener(this);
+        button[39].addMouseListener(hover);
         
-        B[40] = new JButton("4");
-        B[40].setForeground(color1);
-        B[40].setFont(f);
-        B[40].setContentAreaFilled( false );
-        Buttonpanel.add(B[40]);
-        B[40].addActionListener(this);
-        B[40].addMouseListener(hover);
+        button[40] = new JButton("4");
+        button[40].setForeground(color1);
+        button[40].setFont(font1);
+        button[40].setContentAreaFilled( false );
+        Buttonpanel.add(button[40]);
+        button[40].addActionListener(this);
+        button[40].addMouseListener(hover);
         
-        B[41] = new JButton("5");
-        B[41].setForeground(color1);
-        B[41].setFont(f);
-        B[41].setContentAreaFilled( false );
-        Buttonpanel.add(B[41]);
-        B[41].addActionListener(this);
-        B[41].addMouseListener(hover);
+        button[41] = new JButton("5");
+        button[41].setForeground(color1);
+        button[41].setFont(font1);
+        button[41].setContentAreaFilled( false );
+        Buttonpanel.add(button[41]);
+        button[41].addActionListener(this);
+        button[41].addMouseListener(hover);
         
-        B[42] = new JButton("6");
-        B[42].setForeground(color1);
-        B[42].setFont(f);
-        B[42].setContentAreaFilled( false );
-        Buttonpanel.add(B[42]);
-        B[42].addActionListener(this);
-        B[42].addMouseListener(hover);
+        button[42] = new JButton("6");
+        button[42].setForeground(color1);
+        button[42].setFont(font1);
+        button[42].setContentAreaFilled( false );
+        Buttonpanel.add(button[42]);
+        button[42].addActionListener(this);
+        button[42].addMouseListener(hover);
         
-        B[43] = new JButton("-");
-        B[43].setForeground(color1);
-        B[43].setFont(f);
-        B[43].setContentAreaFilled( false );
-        Buttonpanel.add(B[43]);
-        B[43].addActionListener(this);
-        B[43].addMouseListener(hover);
+        button[43] = new JButton("-");
+        button[43].setForeground(color1);
+        button[43].setFont(font1);
+        button[43].setContentAreaFilled( false );
+        Buttonpanel.add(button[43]);
+        button[43].addActionListener(this);
+        button[43].addMouseListener(hover);
         
-        B[44] = new JButton("1");
-        B[44].setForeground(color1);
-        B[44].setFont(f);
-        B[44].setContentAreaFilled( false );
-        Buttonpanel.add(B[44]);
-        B[44].addActionListener(this);
-        B[44].addMouseListener(hover);
+        button[44] = new JButton("1");
+        button[44].setForeground(color1);
+        button[44].setFont(font1);
+        button[44].setContentAreaFilled( false );
+        Buttonpanel.add(button[44]);
+        button[44].addActionListener(this);
+        button[44].addMouseListener(hover);
         
-        B[45] = new JButton("2");
-        B[45].setForeground(color1);
-        B[45].setFont(f);
-        B[45].setContentAreaFilled( false );
-        Buttonpanel.add(B[45]);
-        B[45].addActionListener(this);
-        B[45].addMouseListener(hover);
+        button[45] = new JButton("2");
+        button[45].setForeground(color1);
+        button[45].setFont(font1);
+        button[45].setContentAreaFilled( false );
+        Buttonpanel.add(button[45]);
+        button[45].addActionListener(this);
+        button[45].addMouseListener(hover);
         
-        B[46] = new JButton("3");
-        B[46].setForeground(color1);
-        B[46].setFont(f);
-        B[46].setContentAreaFilled( false );
-        Buttonpanel.add(B[46]);
-        B[46].addActionListener(this);
-        B[46].addMouseListener(hover);
+        button[46] = new JButton("3");
+        button[46].setForeground(color1);
+        button[46].setFont(font1);
+        button[46].setContentAreaFilled( false );
+        Buttonpanel.add(button[46]);
+        button[46].addActionListener(this);
+        button[46].addMouseListener(hover);
         
-        B[47] = new JButton("+");
-        B[47].setForeground(color1);
-        B[47].setFont(f);
-        B[47].setContentAreaFilled( false );
-        Buttonpanel.add(B[47]);
-        B[47].addActionListener(this);
-        B[47].addMouseListener(hover);
+        button[47] = new JButton("+");
+        button[47].setForeground(color1);
+        button[47].setFont(font1);
+        button[47].setContentAreaFilled( false );
+        Buttonpanel.add(button[47]);
+        button[47].addActionListener(this);
+        button[47].addMouseListener(hover);
         
-        B[48] = new JButton("+/-");
-        B[48].setForeground(color1);
-        B[48].setFont(f);
-        B[48].setContentAreaFilled( false );
-        Buttonpanel.add(B[48]);
-        B[48].addActionListener(this);
-        B[48].addMouseListener(hover);
+        button[48] = new JButton("+/-");
+        button[48].setForeground(color1);
+        button[48].setFont(font1);
+        button[48].setContentAreaFilled( false );
+        Buttonpanel.add(button[48]);
+        button[48].addActionListener(this);
+        button[48].addMouseListener(hover);
         
-        B[49] = new JButton("0");
-        B[49].setForeground(color1);
-        B[49].setFont(f);
-        B[49].setContentAreaFilled( false );
-        Buttonpanel.add(B[49]);
-        B[49].addActionListener(this);
-        B[49].addMouseListener(hover);
+        button[49] = new JButton("0");
+        button[49].setForeground(color1);
+        button[49].setFont(font1);
+        button[49].setContentAreaFilled( false );
+        Buttonpanel.add(button[49]);
+        button[49].addActionListener(this);
+        button[49].addMouseListener(hover);
         
-        B[50] = new JButton(".");
-        B[50].setForeground(color1);
-        B[50].setFont(f);
-        B[50].setContentAreaFilled( false );
-        Buttonpanel.add(B[50]);
-        B[50].addActionListener(this);
-        B[50].addMouseListener(hover);
+        button[50] = new JButton(".");
+        button[50].setForeground(color1);
+        button[50].setFont(font1);
+        button[50].setContentAreaFilled( false );
+        Buttonpanel.add(button[50]);
+        button[50].addActionListener(this);
+        button[50].addMouseListener(hover);
         
-        B[51] = new JButton("=");
-        B[51].setForeground(color1);
-        B[51].setFont(f);
-        B[51].setContentAreaFilled( false );
-        Buttonpanel.add(B[51]);
-        B[51].addActionListener(this);
-        B[51].addMouseListener(hover);
+        button[51] = new JButton("=");
+        button[51].setForeground(color1);
+        button[51].setFont(font1);
+        button[51].setContentAreaFilled( false );
+        Buttonpanel.add(button[51]);
+        button[51].addActionListener(this);
+        button[51].addMouseListener(hover);
         
-        B[52] = new JButton("  ---  ");
-        B[52].setForeground(color1);
-        B[52].setFont(f);
-        B[52].setContentAreaFilled( false );
-        Exitpanel.add(B[52]);
-        B[52].addActionListener(this);
-        B[52].addMouseListener(hover);
+        button[52] = new JButton("  ---  ");
+        button[52].setForeground(color1);
+        button[52].setFont(font1);
+        button[52].setContentAreaFilled( false );
+        Exitpanel.add(button[52]);
+        button[52].addActionListener(this);
+        button[52].addMouseListener(hover);
         
-        B[53] = new JButton(" ⌫ ");
-        B[53].setForeground(color1);
-        B[53].setFont(f1);
-        B[53].setContentAreaFilled( false );
-        Exitpanel.add(B[53]);
-        B[53].addActionListener(this);
-        B[53].addMouseListener(hover);
+        button[53] = new JButton(" ⌫ ");
+        button[53].setForeground(color1);
+        button[53].setFont(font2);
+        button[53].setContentAreaFilled( false );
+        Exitpanel.add(button[53]);
+        button[53].addActionListener(this);
+        button[53].addMouseListener(hover);
         
-        B[54] = new JButton(" X ");
-        B[54].setForeground(color1);
-        B[54].setFont(f1);
-        B[54].setContentAreaFilled( false );
-        Exitpanel.add(B[54]);
-        B[54].addMouseListener(hover);
+        button[54] = new JButton(" X ");
+        button[54].setForeground(color1);
+        button[54].setFont(font2);
+        button[54].setContentAreaFilled( false );
+        Exitpanel.add(button[54]);
+        button[54].addMouseListener(hover);
     }
     // Buttons Actions
     @Override
@@ -974,7 +974,7 @@ public class Calculator extends JFrame implements ActionListener{
     // Mouse Click Event
     @Override
     public void mouseClicked(MouseEvent me) {
-        if (me.getSource() == B[54]) {
+        if (me.getSource() == button[54]) {
             System.exit(0);
         }
     }
@@ -982,72 +982,72 @@ public class Calculator extends JFrame implements ActionListener{
     // Mouse Press Event
     @Override
     public void mousePressed(MouseEvent me) {
-       for (JButton B1 : B) {
+       for (JButton B1 : button) {
             if (me.getSource() == B1) {
                 B1.setBackground(Color.DARK_GRAY.brighter());
                 B1.setOpaque(true);
             }
         }
-        if (me.getSource() == B[51]) {
-            B[51].setBorder(BorderFactory.createLineBorder(c2.brighter()));
-            B[51].setBackground(c2.brighter());
-            B[51].setOpaque(true);
+        if (me.getSource() == button[51]) {
+            button[51].setBorder(BorderFactory.createLineBorder(color2.brighter()));
+            button[51].setBackground(color2.brighter());
+            button[51].setOpaque(true);
         }
-        if (me.getSource() == B[54]) {
-            B[54].setBorder(BorderFactory.createLineBorder(Color.RED.brighter()));
-            B[54].setBackground(Color.RED.brighter());
-            B[54].setOpaque(true);
+        if (me.getSource() == button[54]) {
+            button[54].setBorder(BorderFactory.createLineBorder(Color.RED.brighter()));
+            button[54].setBackground(Color.RED.brighter());
+            button[54].setOpaque(true);
         }
     }
     
     // Mouse Release Event
     @Override
     public void mouseReleased(MouseEvent me) {
-        for (JButton B1 : B) {
+        for (JButton B1 : button) {
             if (me.getSource() == B1) {
                 B1.setBorder(BorderFactory.createLineBorder(color1));
                 B1.setBackground(Color.DARK_GRAY.darker());
                 B1.setOpaque(true);
             }
         }
-        if (me.getSource() == B[51]) {
-            B[51].setBorder(BorderFactory.createLineBorder(c2));
-            B[51].setBackground(c2);
-            B[51].setOpaque(true);
+        if (me.getSource() == button[51]) {
+            button[51].setBorder(BorderFactory.createLineBorder(color2));
+            button[51].setBackground(color2);
+            button[51].setOpaque(true);
         }
-        if (me.getSource() == B[54]) {
-            B[54].setBorder(BorderFactory.createLineBorder(Color.RED));
-            B[54].setBackground(Color.RED);
-            B[54].setOpaque(true);
+        if (me.getSource() == button[54]) {
+            button[54].setBorder(BorderFactory.createLineBorder(Color.RED));
+            button[54].setBackground(Color.RED);
+            button[54].setOpaque(true);
         }
     }
     
     // Mouse Entered Event
     @Override
     public void mouseEntered(MouseEvent me) {
-        for (JButton B1 : B) {
+        for (JButton B1 : button) {
             if (me.getSource() == B1) {
                 B1.setBorder(BorderFactory.createLineBorder(color1));
                 B1.setBackground(Color.DARK_GRAY.darker());
                 B1.setOpaque(true);
             }
         }
-        if (me.getSource() == B[54]) {
-            B[54].setBorder(BorderFactory.createLineBorder(Color.RED));
-            B[54].setBackground(Color.RED);
-            B[54].setOpaque(true);
+        if (me.getSource() == button[54]) {
+            button[54].setBorder(BorderFactory.createLineBorder(Color.RED));
+            button[54].setBackground(Color.RED);
+            button[54].setOpaque(true);
         }
-        if (me.getSource() == B[51]) {
-            B[51].setBorder(BorderFactory.createLineBorder(c2));
-            B[51].setBackground(c2);
-            B[51].setOpaque(true);
+        if (me.getSource() == button[51]) {
+            button[51].setBorder(BorderFactory.createLineBorder(color2));
+            button[51].setBackground(color2);
+            button[51].setOpaque(true);
         }
     }
     
     // Mouse Exit Event
     @Override
     public void mouseExited(MouseEvent me) {
-        for (JButton B1 : B) {
+        for (JButton B1 : button) {
             if (me.getSource() == B1) {
                 B1.setBorder(BorderFactory.createLineBorder(Color.BLACK));
                 B1.setBackground(Color.BLACK);
